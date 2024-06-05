@@ -1,0 +1,151 @@
+
+Act-8-Parcial 2 | Semana del 09 al 13 de octubre del 2023 |
+Alma Susana Mejía López
+•
+27 oct
+100
+/100
+100 puntos de 100
+Fecha de entrega: 30 oct, 23:59
+Subir en un archivo .txt el código del ejercicio de apliación libre usando la estructura Queue.
+Comentarios de la clase
+Tu trabajo
+Calificado
+
+Queue Musiquita Richard.txt
+Texto
+No se pueden entregar trabajos después de la fecha de entrega
+Comentarios privados
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EMP</title>
+    <style>
+        body {
+            text-align: center;
+            background: url(https://media.giphy.com/media/GdRG4WHGgmNTq/giphy.gif);
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        .nose {
+            background-color: white;
+        }
+    </style>
+
+</head>
+
+<body>
+    <!-- Encontrar una aplicacion para las colas
+
+    Propuesta: un reproductor de musica en el que se agrega una fila de reproduccion
+
+
+    -->
+
+    <h1 class="nose"> Epic Music Player </h1>
+    <br><br>
+    <h2 class="nose">Selecciona la cancion que quieres anadir a tu cola</h2>
+    <button onclick="dbz()" class="nose" >DBZ Rap</button><br>
+    <button onclick="chayan()" class="nose" >Torero</button><br>
+    <button onclick="mrblu()" class="nose">Mr.BlueSky</button>
+    <br><br>
+    <p id="cola" class="nose" ></p>
+    <br><br>
+    <button onclick="b1()" class="nose">Borrar Primero</button>
+    <button onclick="play()" class="nose">play</button>
+    <button onclick="b2()" class="nose">Borrar ultimo</button>
+
+
+    <script>
+
+        class Fila {
+            constructor() {
+                this.cajita = [];
+
+            }
+
+            enqueue(song) {
+                this.cajita.push(song)
+                return this.cajita;
+            }
+            dequeue() {
+                return this.cajita.shift();
+            }
+            pop() {
+                return this.cajita.pop();
+            }
+            array() {
+                return this.cajita;
+            }
+
+        }
+
+        const fila = new Fila();
+
+        function dbz() {
+            let cola = document.getElementById("cola")
+            const song1 = "DBZ RAP.CANCERBERO"
+            const metodo = fila.enqueue(song1);
+            cola.innerHTML = "Fila: " + metodo;
+        }
+
+        function chayan() {
+            let cola = document.getElementById("cola")
+            const song2 = "TORERO.CHAYANNE"
+            const metodo1 = fila.enqueue(song2);
+            cola.innerHTML = "Fila: " + metodo1;
+        }
+
+        function mrblu() {
+            let cola = document.getElementById("cola")
+            const song3 = "MR BLUESKY.NOSE"
+            const metodo2 = fila.enqueue(song3);
+            cola.innerHTML = "Fila: " + metodo2;
+        }
+
+        function b1() {
+            primer = fila.dequeue();
+            alert("Se elimino " + primer);
+        }
+
+        function b2() {
+            primero = fila.pop();
+            alert("Se elimino " + primero);
+        }
+
+        function play() {
+            caja = fila.array();
+            fila.dequeue();
+
+
+            if (caja[0] === 'DBZ RAP.CANCERBERO') {
+                const music = new Audio('Sources/2.mp3');
+                let song = "DBZ RAP.CANCERBERO"
+                alert("Reproducir " + song)
+                music.play();
+            }
+            if (caja[0] === 'TORERO.CHAYANNE') {
+                const music = new Audio('Sources/1.mp3');
+                let song = "TORERO.CHAYANNE"
+                alert("Reproducir " + song)
+                music.play();
+            }
+            if (caja[0] === 'MR BLUESKY.NOSE') {
+                const music = new Audio('Sources/3.mp3');
+                let song = "MR BLUESKY.NOSE"
+                alert("Reproducir " + song)
+                music.play();
+            }
+
+            let cola = document.getElementById("cola")
+            cola.innerHTML = "Fila: " + caja;
+        }
+
+    </script>
+</body>
+
+</html>

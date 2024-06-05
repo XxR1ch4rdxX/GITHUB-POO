@@ -7,7 +7,7 @@
 
 class Persona:
     def comogritan(self):
-        `pass
+        pass
 
 class Nero(Persona):
     def comogritan(self):

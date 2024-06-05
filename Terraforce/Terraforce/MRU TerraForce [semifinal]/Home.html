@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TerraForce</title>
+    <link rel="stylesheet" href="HomeCSS.css">
+    <script src="HomeJS.js"></script>
+</head>
+
+<body>
+    <div id="upmenu" class="upmenu">
+
+        <a href="Index.html" class="ref">inicio</a>
+    </div>
+    <div id="profile" class="profile">
+        <div id="avatarfinal" class="avatar"></div>
+        <div  class="datos">
+            <p id="usuariofinal">[Usuario]</p>
+            <p id="Correo final">[Correo]</p>
+        </div>
+    </div>
+    <div id="bodyfake" class="bodyfake">
+        <div id="content" class="content">
+            <h2 class="defaultmessage">Sin novedad.... </h2>
+        </div>
+        
+    </div>
+
+    <div class="crearp">
+        <button onclick="createpublication()" class="redondo">+</button><br>
+        <button onclick="borrar()"class="redondo">Borrar el último post</button>
+        <div id="overlaypublication" class="overlaypublication">
+            <div id="modalpublication" class="modalpublication">
+
+                <form action="Home.html" method="post" enctype="multipart/form-data"> <!--"multipart/form-data" es para enviar las imágenes-->
+                    <label for="header" class="label"> Encabezado</label><br>
+                    <input type="text" id="header" placeholder="¡Hola! Soy un encabezado" /> <br>
+                    
+                    <label for="description" class="label"> Escribe algo...</label>
+                    <textarea name="" id="description"  cols="30" rows="10" placeholder="¡Hola a todos! 👋 Solo quiero compartir un pedacito de mi día y conectar con ustedes. 🌟" ></textarea> <br>
+                    
+                    <label for="upload" class="label"> ¡Sube una imagen!</label>
+                    <input type="file" name="upload" id="picpublication" accept="images/*" >
+                   
+                </form>
+                <br><br>
+                
+                <button class="buttones" onclick="back()" >Atras</button>
+                <button class="buttones" onclick="ssubmit()">Aceptar</button>
+            </div>
+        </div>
+    </div>
+    <script src="HomeJS.js"></script>
+</body>
+
+</html>
